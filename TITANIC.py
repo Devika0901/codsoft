@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import requests
 from io import BytesIO
-url = 'https://raw.githubusercontent.com/your-username/your-repo/main/path/to/your-file.xlsx'
+url = 'https://raw.githubusercontent.com/Devika0901/codsoft/main/Titanic-Dataset.csv'
 response = requests.get(url)
 data = BytesIO(response.content)
 df = pd.read_excel(data)
