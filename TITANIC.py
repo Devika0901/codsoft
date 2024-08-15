@@ -3,7 +3,12 @@ import numpy as np
 import pandas as pd 
 import seaborn as sns
 import matplotlib.pyplot as plt
-df=pd.read_csv('\github.com\Devika0901\codsoft\blob\main\Titanic-Dataset.csv')
+import requests
+from io import BytesIO
+url = 'https://raw.githubusercontent.com/your-username/your-repo/main/path/to/your-file.xlsx'
+response = requests.get(url)
+data = BytesIO(response.content)
+df = pd.read_excel(data)
 df.head()
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.model_selection import train_test_split
