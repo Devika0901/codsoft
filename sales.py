@@ -6,8 +6,8 @@ import requests
 from io import BytesIO
 url = 'https://raw.githubusercontent.com/Devika0901/codsoft/main/advertising.csv'
 response = requests.get(url)
-d = BytesIO(response.content)
-
+df = BytesIO(response.content)
+d = pd.read_excel(df)
 d.head()
 d.isnull().sum()
 d.describe()
