@@ -2,7 +2,12 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-d=pd.read_csv("advertising.csv")
+import requests
+from io import BytesIO
+url = 'https://raw.githubusercontent.com/Devika0901/codsoft/main/advertising.csv'
+response = requests.get(url)
+d = BytesIO(response.content)
+
 d.head()
 d.isnull().sum()
 d.describe()
