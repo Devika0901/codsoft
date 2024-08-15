@@ -4,7 +4,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
-data=pd.read_csv("IRIS.csv")
+import requests
+from io import BytesIO
+url = 'https://raw.githubusercontent.com/Devika0901/codsoft/main/IRIS.csv'
+response = requests.get(url)
+df = BytesIO(response.content)
+data = pd.read_excel(df)
 data.head()
 data.describe()
 x=data.drop('species',axis=1)
