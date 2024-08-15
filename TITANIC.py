@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd 
 import seaborn as sns
 import matplotlib.pyplot as plt
-df=pd.read_csv('/Users/kdevi/OneDrive/Desktop/Titanic-Dataset.csv')
+df=pd.read_csv('Titanic-Dataset.csv')
 df.head()
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 from sklearn.model_selection import train_test_split
